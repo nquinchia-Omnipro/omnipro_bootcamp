@@ -1,0 +1,64 @@
+<div id="menu-btn" class="menu">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+</div>
+<div class="container container-nav">
+    <nav class="nav">
+        
+        <div class="letter"></div>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nuestro equipo</a></li>
+            <li><a href="#">Portafolio</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="letter letter-out"></div>
+<!--Pestañas-->
+<div class="container">
+    <div class="tab">
+        <button class="tab-button current" id="tab-login-button">Ingreso</button>
+        <button class="tab-button" id="tab-register-button">Registro</button>
+    </div>
+    <div class="tab-content" id="tab-login">
+        <form>
+            <p>EMAIL</p>
+            <input type="email" id="email" placeholder="Email">
+            <p>CONTRASEÑA</p>
+            <input type="password" id="password-login" placeholder="Contraseña">
+
+            <button type="submit">Ingreso</button><br>
+            <a href="#" id="forgot-pass">Olvidaste la contraseña</a>
+
+        </form>
+    </div>
+    <div class="tab-content" id="tab-register">
+        <form onsubmit="return false">
+            <p>NOMBRE</p>
+            <input type="text" id="firstname" placeholder="Nombre">
+            <p>APELLIDO</p>
+            <input type="text" id="lastname" placeholder="Apellido">
+            <p>EMAIL</p>
+            <input type="email" id="email-register" placeholder="Email">
+            <p>CONTRASEÑA</p>
+            <input type="password" id="password-register" placeholder="Contraseña">
+            <div class="subscriber">
+                <input type="checkbox" name="sub">
+                <p>Suscribirse al Newsletter</p>
+            </div>
+            <button type="submit" id="register-button">Registro</button>
+        </form>
+    </div>
+</div>
+<div class="success" id="registered">
+    <div class="success-text">
+        <p>success</p>
+    </div>
+    <div class="success-icon">
+    <img src='<?php echo $this->getViewFileUrl('OmniPro_Marcos::images/check.svg'); ?>' alt="image-icon">
+    </div>
+</div>
