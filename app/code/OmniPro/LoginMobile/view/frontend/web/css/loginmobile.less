@@ -1,0 +1,321 @@
+@background-blue: #393FD0;
+@menu-darkblue: #3A3061;
+@font-color: #FFFFFF;
+@small-font-size: 0.875rem;
+@medium-font-size: 1rem;
+@large-font-size: 1.255em;
+@light-blue: #37D0C8;
+@basic-font: 'Dosis';
+
+
+
+/* Reset / Normalize
+  ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @basic-font;
+    opacity: 1;
+}
+
+#maincontent {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container
+  ============================= */
+.page-wrapper {
+    background-color: @background-blue;
+    color: @font-color;
+
+}
+
+/* Menu Container
+  ============================= */
+
+.menu {
+    padding: 0.313rem 0;
+    width: 2em;
+    height: 2em;
+    background-color: transparent;
+    z-index: 500; 
+    position: fixed;
+    top: 0.625rem;
+    right: 0.938rem;
+    cursor: pointer;
+
+    .menu__line, .menu__arrow{
+        width: 100%;
+        height: 0.313rem;
+        background-color: @font-color;
+    }
+}
+
+#menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.arrow_line-1 {
+  transform: rotate(-45deg);
+}
+.arrow_line-2 {
+  margin-top:  -0.313rem;
+  transform: rotate(45deg);
+}
+
+#menu-btn_arrow {
+  display: none;
+}
+
+.container-nav {
+  display: none;
+}
+
+/* R Logo
+  ============================= */
+
+
+.logocontainer {
+  width: 100vw;
+  height: 30vh;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logocontainer__mainlogo {
+    width: 8.725rem;
+    height: 12.175rem;
+}
+
+/* Background Logos
+  ============================= */
+
+.letterlogo {
+    width: 16.957rem;
+    height: 19.949rem;
+    position: absolute;
+}
+
+.letterlogo-a {
+  left: 0;
+  top:30vh;
+}
+
+.letterlogo-b {
+  width: 100%;
+  height: 30vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 20.957rem;
+    height: 26.949rem;
+  }
+}
+
+.letterlogo-c {
+  right: 0;
+  top: 25vh;
+  
+  img {
+    position: absolute;
+    right: 0;
+  }
+}
+
+/* Buttons Tabs
+  ============================= */
+.tab {
+  display: flex;
+  justify-content: center;
+  
+  .tab-button {
+    width: 165px;
+    height: 70px;
+    text-transform: uppercase;
+    border: none;
+    background-color: @menu-darkblue;
+    color: @font-color;
+    opacity: .7;
+    font-size: @large-font-size;
+    font-family: @basic-font;
+    border-radius: 5px;
+    margin-bottom: -1px;
+  }
+
+  button:hover {
+    background-color: @menu-darkblue;
+  }
+
+  .current {
+    opacity: .9;
+  }
+}
+
+#tab-login-button {
+  clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
+  margin-right: -30px;
+}
+#tab-register-button {
+  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/*  Tabs Content
+  ============================= */
+.container {
+  position: relative;
+  z-index: 100;
+}
+.tab-content {
+  width: 300px;
+  margin: auto;
+  background-color: @menu-darkblue;
+  opacity: 0.9;
+  padding: 24px;
+  display: none;
+
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  input[type="email"], input[type="password"], input[type="text"] {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid @font-color;
+    padding-left: 0;
+    padding-bottom: 12px;
+    color: @font-color;
+  }
+
+  button[type="submit"] {
+    color: @font-color;
+    width: 100%;
+    height: 44px;
+    border-radius: 24px;
+    background: linear-gradient(90deg, #8DE7ED, #2FCEC5);
+    font-size: 18px;
+    line-height: 22.75px;
+    font-weight: 700;
+  }
+
+  input:focus{
+    outline: none;
+    box-shadow: none;
+    border-bottom: 3px solid @light-blue;
+}
+
+  .subscriber{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input[type=checkbox]{
+        width: 34px;
+        height: 14px;
+        margin: 0 .8em;
+        background-color: #9692AE;;
+        appearance: none;
+        border: none;
+        border-radius: .6em;
+        transition: .5s;
+        cursor: pointer;
+    }
+    input[type=checkbox]::before{
+        position: absolute;
+        content: "";
+        top: -3.5px;
+        background-color: #fff;;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transition: .5s;
+    }
+    input[type=checkbox]:checked{
+        background-color: @light-blue;
+    }
+    input[type=checkbox]:checked::before{
+        transform: translateX(16.5px); //-3
+    }
+    p{
+        margin: 0;
+        line-height: 2em;
+    }
+}
+  #forgot-pass {
+    display: block;
+    text-align: center;
+    color: white;
+  }
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+#tab-login {
+  height: 349px;
+}
+
+#tab-register {
+  height: 441px;
+}
+
+/* Success View
+  ============================= */
+
+.success{ 
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: 5em;
+  transform: translate(-50%,-50%) scale(0);
+  transition: .3s ease;
+  background-color: @light-blue;
+  width: 90%;
+  height: 65%;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  
+  .success-text{
+      text-transform: uppercase;
+      position: fixed;
+      margin-bottom: 15em;
+
+      p{
+          font-size: 1.5em;
+          color: @background-blue;
+          font-weight: bold;
+      }
+  }
+  .success-icon{
+      display: flex;
+      justify-content: center;
+      width: 8em;
+      height: 8em;
+      background-color: @background-blue;
+      border-radius: 50%;
+
+      img{
+          margin-left: 3em;
+          margin-bottom: 2em;
+      }
+  }
+}

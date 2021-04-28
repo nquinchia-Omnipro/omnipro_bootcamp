@@ -1,11 +1,13 @@
 <div id="menu-btn" class="menu">
-        <div class="line line-1"></div>
-        <div class="line line-2"></div>
+        <div class="menu__line line-1"></div>
+        <div class="menu__line line-2"></div>
+</div>
+<div id="menu-btn_arrow" class="menu">
+        <div class="menu__arrow arrow_line-1"></div>
+        <div class="menu__arrow arrow_line-2"></div>
 </div>
 <div class="container container-nav">
     <nav class="nav">
-        
-        <div class="letter"></div>
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Servicios</a></li>
@@ -17,38 +19,64 @@
     </nav>
 </div>
 
-<div class="letter letter-out"></div>
+<div class="logocontainer">
+    <div class="logocontainer__mainlogo">
+        <img src='<?php echo $this->getViewFileUrl('OmniPro_LoginMobile::images/Logo.svg'); ?>' alt="image-icon">
+    </div>
+</div>
+
+<div class="letterlogo letterlogo-a">
+    <img src='<?php echo $this->getViewFileUrl('OmniPro_LoginMobile::images/Fill 8.svg'); ?>' alt="image-icon">
+</div>
+<div class="letterlogo letterlogo-b">
+    <img src='<?php echo $this->getViewFileUrl('OmniPro_LoginMobile::images/Fill 13.svg'); ?>' alt="image-icon">
+</div>
+<div class="letterlogo letterlogo-c">
+    <img src='<?php echo $this->getViewFileUrl('OmniPro_LoginMobile::images/Fill 17.svg'); ?>' alt="image-icon">
+</div>
 <!--Pestañas-->
 <div class="container">
     <div class="tab">
         <button class="tab-button current" id="tab-login-button">Ingreso</button>
         <button class="tab-button" id="tab-register-button">Registro</button>
     </div>
-    <div class="tab-content" id="tab-login">
+    <div class="tab-content active" id="tab-login">
         <form>
-            <p>EMAIL</p>
-            <input type="email" id="email" placeholder="Email">
-            <p>CONTRASEÑA</p>
-            <input type="password" id="password-login" placeholder="Contraseña">
-
-            <button type="submit">Ingreso</button><br>
+            <div class="tab-login__email">
+                <p>EMAIL</p>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="tab-login__pass">
+                <p>CONTRASEÑA</p>
+                <input type="password" id="password-login" placeholder="Contraseña">
+            </div>
+            
+            <div class="subscriber">
+                <input type="checkbox" name="sub">
+                <p>Suscribirse al Newsletter</p>
+            </div>
+            <button type="submit">Ingreso</button>
             <a href="#" id="forgot-pass">Olvidaste la contraseña</a>
 
         </form>
     </div>
     <div class="tab-content" id="tab-register">
         <form onsubmit="return false">
-            <p>NOMBRE</p>
-            <input type="text" id="firstname" placeholder="Nombre">
-            <p>APELLIDO</p>
-            <input type="text" id="lastname" placeholder="Apellido">
-            <p>EMAIL</p>
-            <input type="email" id="email-register" placeholder="Email">
-            <p>CONTRASEÑA</p>
-            <input type="password" id="password-register" placeholder="Contraseña">
-            <div class="subscriber">
-                <input type="checkbox" name="sub">
-                <p>Suscribirse al Newsletter</p>
+            <div class="tab-register__name">
+                <p>NOMBRE</p>
+                <input type="text" id="firstname" placeholder="Nombre" required>
+            </div>
+            <div class="tab-register__lastname">
+                <p>APELLIDO</p>
+                <input type="text" id="lastname" placeholder="Apellido" required>
+            </div>
+            <div class="tab-register__email">
+                <p>EMAIL</p>
+                <input type="email" id="email-register" placeholder="Email" required>
+            </div>
+            <div class="tab-register__pass">
+                <p>CONTRASEÑA</p>
+                <input type="password" id="password-register" placeholder="Contraseña" required>
             </div>
             <button type="submit" id="register-button">Registro</button>
         </form>
@@ -59,6 +87,6 @@
         <p>success</p>
     </div>
     <div class="success-icon">
-    <img src='<?php echo $this->getViewFileUrl('OmniPro_Marcos::images/check.svg'); ?>' alt="image-icon">
+    <img src='<?php echo $this->getViewFileUrl('OmniPro_LoginMobile::images/Path 21.svg'); ?>' alt="image-icon">
     </div>
 </div>
