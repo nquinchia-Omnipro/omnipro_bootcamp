@@ -35,8 +35,117 @@
 
 /* Menu Container
   ============================= */
+header {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+  display: flex;
+  justify-content: flex-end;
 
-.menu {
+  .nav {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: -380px;
+    top: 200px;
+    transition: left .5s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    background-color: @background-blue;
+    z-index: 60;
+
+    ul {
+      height: 333px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 67px;
+    }
+
+    a,
+    a:visited, 
+    a:hover {
+      font-family: @basic-font;
+      color: @font-color;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      opacity: .5;
+      margin-left: 24px;
+    }
+    li:hover > .menu-selector {
+      background: #fff;
+    }
+    li:hover > a,
+    a:hover,
+    a:visited {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .menu-btn:checked ~ .container .nav {
+    left: 0;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background-color: #fff;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(40deg);
+    width: 40%;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(-40deg);
+    width: 40%;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    
+    .navicon {
+      background: transparent;
+      display: block;
+      height: 3px;
+      position: relative;
+      transition: background .5s ease-out;
+      width: 30px;
+    }
+
+    .navicon:before,
+    .navicon:after {
+      background: #fff;
+      content: '';
+      display: block;
+      height: 3px;
+      position: absolute;
+      transition: all .5s ease-out;
+      width: 100%;
+    }
+    .navicon:before {
+      top: 5px;
+    }
+    .navicon:after {
+      top: -5px;
+    }
+
+  }
+}
+
+.menu-btn {
     padding: 0.313rem 0;
     width: 2em;
     height: 2em;
@@ -45,35 +154,24 @@
     position: fixed;
     top: 0.625rem;
     right: 0.938rem;
-    cursor: pointer;
-
-    .menu__line, .menu__arrow{
-        width: 100%;
-        height: 0.313rem;
-        background-color: @font-color;
-    }
+    cursor: pointer; 
 }
 
-#menu-btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: transparent;
 
-.arrow_line-1 {
-  transform: rotate(-45deg);
-}
-.arrow_line-2 {
-  margin-top:  -0.313rem;
-  transform: rotate(45deg);
-}
-
-#menu-btn_arrow {
-  display: none;
-}
-
-.container-nav {
-  display: none;
+  .menu-selector {
+    display: inline-block;
+    height: 2px;
+    width: 28px;
+    background: transparent;
+    position: relative;
+    top: -5px;
+    transition: all .5s ease-out;
+  }
 }
 
 /* R Logo
@@ -114,6 +212,8 @@
   top: 0;
   display: flex;
   justify-content: center;
+  position: absolute;
+  z-index: 80;
 
   img {
     width: 20.957rem;
@@ -207,6 +307,7 @@
     font-size: 18px;
     line-height: 22.75px;
     font-weight: 700;
+    border: none;
   }
 
   input:focus{
@@ -279,24 +380,21 @@
   ============================= */
 
 .success{ 
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  margin-top: 5em;
-  transform: translate(-50%,-50%) scale(0);
-  transition: .3s ease;
+  position: absolute;
   background-color: @light-blue;
-  width: 90%;
-  height: 65%;
+  margin: 0 21px 33px;
+  width: 327px;
+  height: 441px;
   z-index: 50;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  bottom: 0;
   
   .success-text{
       text-transform: uppercase;
-      position: fixed;
+      position: absolute;
       margin-bottom: 15em;
 
       p{

@@ -12,8 +12,9 @@ require(['jquery', 'jquery/ui'], function($){
             $("#tab-login").addClass("active");
             $("#tab-register").removeClass("active");
         })
-        $("#menu-btn").click(function() {
-            $(".container-nav").addClass("active");
+        $("#register-button").click(function(){
+            $(".container").addClass("inactive");
+            $(".success").css("display", "flex" );
         })
     })
 });
